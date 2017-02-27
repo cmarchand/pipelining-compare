@@ -13,7 +13,7 @@
     </xd:doc>
     
     <xsl:template match="*">
-        <xsl:variable name="prefix" select="prefix-from-QName(.)"/>
+        <xsl:variable name="prefix" select="prefix-from-QName(resolve-QName(name(.),.))" as="xs:string?"/>
         <xsl:element name="{if($prefix) then concat($prefix,':',upper-case(local-name(.))) else upper-case(local-name(.))}">
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="node()"/>
@@ -25,7 +25,7 @@
     </xsl:template>
     
     <xsl:template match="@*">
-        <xsl:copy-of select="."/>
+        <xsl:copy />
     </xsl:template>
     
     <xsl:template match="text()">

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://efl.fr/chaine/saxon-pipe/config"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://efl.fr/chaine/saxon-pipe/config gaulois-pipe:/fr/efl/chaine/xslt/schemas/gaulois-pipe_config.xsd">
+    <pipe mutiThreadMaxSourceSize="24349456" nbThreads="3">
+        <xslt href="cp:/step1.xsl"/>
+        <xslt href="cp:/step2.xsl"/>
+        <xslt href="cp:/step3.xsl"/>
+        <output id="main" encoding="utf-8" indent="yes">
+            <folder relative="." to="source-file"/>
+            <fileName name="$[input-basename]-output.xml"/>
+        </output>
+    </pipe>
+</config>
+

@@ -19,8 +19,8 @@
     </xsl:template>
     
     <xsl:template match="@*">
-        <xsl:variable name="prefix" select="prefix-from-QName(.)"/>
-        <xsl:attribute name="{if($prefix) then concat($prefix,':',upper-case(local-name(.))) else upper-case(local-name(.))}" select="."/>
+        <xsl:variable name="qn" as="xs:QName" select="resolve-QName(name(.),..)"/>
+        <xsl:attribute name="{upper-case(local-name(.))}" select="." namespace="{namespace-uri-from-QName($qn)}"/>
     </xsl:template>
     
 </xsl:stylesheet>

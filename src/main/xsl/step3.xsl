@@ -18,7 +18,11 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="text()">
+    <xsl:template match="text()" priority="1">
         <xsl:sequence select="upper-case(.)"/>
+    </xsl:template>
+    
+    <xsl:template match="@*">
+        <xsl:copy/>
     </xsl:template>
 </xsl:stylesheet>

@@ -15,5 +15,31 @@
             <artifactId>cp-protocol</artifactId>
             <version>1.2</version>
         </dependency>
+        <dependency>
+            <groupId>top.marchand.xml</groupId>
+            <artifactId>gaulois-pipe</artifactId>
+            <version>1.01.08</version>
+        </dependency>
     </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>top.marchand.xml.maven</groupId>
+                <artifactId>catalogBuilder-maven-plugin</artifactId>
+                <version>1.0.3</version>
+                <configuration>
+                    <patternUrl>artifactId:/</patternUrl>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>catalog</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
