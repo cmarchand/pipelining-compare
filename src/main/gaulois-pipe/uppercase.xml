@@ -7,8 +7,8 @@
         <xslt href="cp:/step2.xsl"/>
         <xslt href="cp:/step3.xsl"/>
         <output id="main" encoding="utf-8" indent="yes">
-            <folder relative="." to="source-file"/>
-            <fileName name="$[input-basename]-output.xml"/>
+            <folder absolute="$[output]"/>
+            <fileName name="uppercase-gaulois.xml"/>
         </output>
     </pipe>
 </config>

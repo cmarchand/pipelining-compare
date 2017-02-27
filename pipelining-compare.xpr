@@ -166,6 +166,11 @@
     </meta>
     <projectTree name="pipelining-compare.xpr">
         <folder path="src/"/>
+        <folder path="target/"/>
         <file name="pom.xml"/>
+        <file name="runCalabash.sh"/>
+        <file name="runGaulois.sh"/>
+        <file name="runMorgana.sh"/>
+        <file name="runShell.sh"/>
     </projectTree>
 </project>
